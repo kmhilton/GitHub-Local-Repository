@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			CSS Intro
+		</title>
+		<style media="screen"> /*property: value; all of this is the RULE*/
+			p {
+				font-family: sans-serif;
+			}
+			a {
+				border: 1px dotted #333;
+			}
+			p>a {/* the anchor that is the immediate descendant of the paragraph tag */
+				color: pink;
+				border: none;
+			}
+			.header {
+				border: 1px solid red;
+				z-index: 1; 
+			}
+			#special {
+				color: aliceblue;
+			}
+		</style>	
+	</head>
+	<body>
+		<div class="header">
+			<h1>
+				Header text
+			</h1>
+		</div>
+		<div class="content">
+			<p style="font-weight: bold; border-bottom: 1px solid #000;">
+				Some Content goes here <a href="http://google.com">here</a>.
+				<span>
+					<a href="somethin.com">sample</a>
+				</span>	
+			</p>
+			<p style="font-weight: bold; border-bottom: 1px solid #000;">
+				Some Content goes here <a href="http://google.com">here</a>.
+			</p>
+			<p id="special">
+				Some more content.
+			</p>
+			<a href="http://bing.com">Search</a>	
+		</div>
+		<div class="footer">
+			copyright &copy; 2016
+		</div> 
+	</body>
+</html>									

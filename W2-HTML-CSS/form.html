@@ -1,0 +1,40 @@
+<!DOCTYPE hrml>
+<html>
+	<head>
+			<meta charset="utf-8".
+			<title>
+				Forms. We don't need no steeking forms!
+			</title>
+	</head>
+	<body>
+		<h1>A Form.</h1>
+		<form action="forms.html" method="post" name="myform"> <!-- target="_blank"> --> <!--where the form is getting sent to = action and the method is how it's getting there. Now a "post" (attached to an object or request) is more secure than a "get" (used to retrieve insecure data, appended to a url). An example of a get is http://www.google.com/form_submit.php?name=ben&lastname=vaughan. Example of a post is http://www.google.comform_submit.php. Now a target is where the response is going... target="_blank" is opening a new form and responding in a new blank page. target="_self" - loads in the current window (not used that often, bc it's a default) _parent - deals with frames, and it loads in the parent frame....uuugh, old and ugly.-->
+			<fieldset>
+			<label for="firstName">First Name</label> <!--it's good form to label your form, and it must match name on the next line-->
+			<input type="text" name="firstName" id="firstName"> <!--input type is hard, b/c certain inputs/types are supported by all browsers. But a name and an id are both needed.-->
+			<label for="lastName">Last Name</label>
+			<input type="text" name="lastName" id="lastName"> <!--name is the title of the box, and id is what is put into the box-->
+			<input type="button" name="hello_button" id="hello_button" value="hello">
+			</fieldset>
+			<fieldset> <!--are block level element...going all the way across the line-->
+				<label for="isAwesome">
+					is Awesome?
+					<input type="checkbox" name="isAwesome" id="isAwesome"> <!--input is in the label, so just check anywhere on the words, and the box is checked...helps not being a little tiny box to check-->
+				</label>
+			</fieldset>	
+			<fieldset>
+				<label for="height">
+					tall
+						<input type="radio" name="height" id="height_tall" value="tall">
+				</label>
+				<label>
+					short
+						<input type="radio" name="height" id="height_short" value="short"> <!--value is what determines what is chosen-->
+				</label>
+			</fieldset>					
+			<input type="submit" value="Save Me!" id="submit">
+			<input type="reset" value="reset" id="reset"> <!--clears the form-->
+			
+		</form>
+	</body>
+</html>					
