@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Classic Layouts (oooooo, retro)</title>
+      <style media="screen">
+        body { /*resetting the body tends to be the first thing he likes to get rid of*/
+          padding: 0;
+          margin: 0;
+        }
+
+        /*Header*/
+        .header {
+          background-color: lightgreen;
+        }
+
+        /*Content*/
+        .content {
+          background-color: #ccc;
+        }
+
+        .content>div { /*divs that are immediate descendants (immediate child) of .content get the following rule*/
+          float: left; /*remember when you float elements, the container looses it's height...in this case it is .content*/
+         /*so, to fix the floating problem, you can create a pseudo class and space it out....can do this with a div, or you could try an over flow hidden and it could work. Clearfix is the easiest!*/
+        }
+
+        .sidebar {
+          background-color: tan;
+          width: 25%
+        }
+
+        .main {
+          background-color: #fff;
+          width: 50%;
+        }
+
+        .ads {
+          background-color: green;
+          width: 25%;
+        }
+
+        /*Footer*/
+        .footer {
+          background-color: lightblue;
+        }
+        /*utility rules*/
+
+        .clearfix:after {
+            content: "";
+            /*background-color: red;*/
+            display: block; /*can only clear a block element *see the two blocked out lines to understand this!*/
+            /*height: 10px;*/
+            height: 0;
+            clear: both;
+        }
+      </style>
+  </head>
+  <body>
+      <div class="header">
+        some head
+      </div>
+    <div class="content clearfix">
+        <div class="sidebar">
+          <!-- ul>li*4>a -->
+          <ul>
+            <li>
+                <a href="#">link1</a>
+            </li>
+            <li>
+                <a href="#">link2</a>
+            </li>
+            <li>
+                <a href="#">link3</a>
+            </li>
+            <li>
+                <a href="#">link4</a>
+            </li>
+          </ul>
+        </div>
+      <div class="main">
+          <p>
+            <!-- p*5>lorem -->
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+      </div>
+      <div class="adds">
+          ad$
+      </div>
+    </div>
+    <div class="footer">
+      some footer
+    </div>
+  </body>
+
+</html>
+
+<!-- display block = as large as page
+block = as large as content and accepts padding and margin
+inline = accepts some padding but no margin
+inline-block = like inline but accepts block rules -->

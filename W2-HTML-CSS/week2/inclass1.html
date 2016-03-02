@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!--transitions and transformations with html....good bc html is cached unlike javascript and doesn't use a lot of memory -->
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>CSS Transitions</title>
+      <style media="screen">
+        .block {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            color: #000;
+            /*transition-delay: 0; /*0 is default   command / is the html shortcut for notations*/
+            /*transition-duration: 1s;
+            transition-property: color;
+            transition-timing-function: ease; /*easings.net or linear is default*/
+            /*property, duration, timing funtion, delay is the order of shortcut*/
+            transition: color 1s ease 0s,
+                        background-color .5s linear 0s,
+                        border-radius 2s ease 0s,
+                        transform 1s ease 0s;
+        }
+        .block:hover {
+          color:#fff;
+        }
+
+        .rounded {
+            background-color: blue;
+            border-radius: 100px;
+        }
+
+        .moved {
+            /*transform: translate(300px, 0px) rotate(360deg) skew(34deg) scaleX(0.5);*/
+            transform: matrix(1.0,2.0,3.0,4.0,5.0,6.0);
+
+        }
+      </style>
+      <style media="print">
+          body {
+            font-size: 18px;
+          }
+          .banner {
+              display: none;
+          }
+          a {
+              color: #000;
+              text-decoration: none;
+          }
+      </style>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+      <script type="text/javascript">
+          $(function(){ //jquery doc ready
+             var block = $('.block');
+               $('.button1').on('click', function(){
+                   block.toggleClass('rounded') //toggleClass either add the class or remove it
+               });
+               $('.button2').on('click', function(){
+                   block.toggleClass('moved')
+                });
+          }); //click event in jquery that runs a function
+      </script>
+  </head>
+  <body>
+      <!-- Buttons! -->
+      <button type="button" name="button1" class="button1">click me!</button>
+      <button type="button" name="button2" class="button2">and me!</button>
+      <div class="block">
+        Hello, World!
+      </div>
+  </body>
+</html>

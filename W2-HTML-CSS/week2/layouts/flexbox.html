@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Flexbox - the new hotness</title>
+  <style>
+        body {
+          padding: 0;
+          margin:0;
+          display: flex;
+          height: 100vh; /* makes the page as tall as our browser*/
+          flex-direction: column;
+          overflow: hidden;
+        }
+        .header { /*these colors just help with understanding what's going on*/
+          background-color: lightblue;
+          min-height: 50px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 1rem;
+          font-weight: 600;
+          font-size: 24px;
+        }
+
+        .content {
+          background-color: red;
+          /*flex: 1 0 auto; want content block to grow*/
+          /*overflow-y: auto; /*body is as big as browser window, but if content overflows height of body, a scroll bar shows up*/
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: auto;
+          display: flex; /*remember default is horizontal, this makes the columns side by side*/
+        }
+
+        .sidebar {
+          background-color: #fff;
+          width: 200px;
+          flex: 1 0 auto;
+        }
+
+        .main {
+          flex-shrink:1;
+          background-color: #efefef;
+          overflow-y: scroll; /*this allows the space for the scroll bar to be there, always, so the text doesn't pop around when the scroll bar occurs later*/
+        }
+
+        .ads {
+          background-color: #pink;
+          width: 150px;
+          display: flex;
+          flex: 1 0 auto; /*keeps the column fixed size*/
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        .ad {
+          width: 100px;
+          height: 100px;
+          background-color: green;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 36px;
+          font-weight: 600;
+          font-family: sans-serif;
+          margin-bottom: 1rem;
+        }
+
+        .ad:first-child {
+            margin-top: 1rem;
+        }
+
+        .ad:after {
+            content: "$";
+            display: block;
+            color: #fff;
+        }
+
+        .footer {
+          background-color: lightgreen;
+        }
+  </style>
+  </head>
+  <body>
+      <div class="header">
+        some head
+      </div>
+    <div class="content clearfix">
+        <div class="sidebar">
+          <!-- ul>li*4>a -->
+          <ul>
+            <li>
+                <a href="#">link1</a>
+            </li>
+            <li>
+                <a href="#">link2</a>
+            </li>
+            <li>
+                <a href="#">link3</a>
+            </li>
+            <li>
+                <a href="#">link4</a>
+            </li>
+          </ul>
+        </div>
+      <div class="main">
+          <p>
+            <!-- p*5>lorem -->
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+      </div>
+      <div class="adds">
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>
+        ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <p>
+        copyright &copy;2016.
+      </p>  
+    </div>
+  </body>
+
+
+  <!-- IMPORTANT to realize which direction your flex boxes are going in.....the default being row or if you changed the flex-direction to column then
+  the justify content and aligning items go the opposite direction -->
+
+</html>

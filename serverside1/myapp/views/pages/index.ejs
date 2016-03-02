@@ -1,0 +1,29 @@
+<!--view/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      call the ejs include command and provide the path to the partial to include. Path is relative to this file. -->
+
+      <!--Include out head,ejs file -->
+
+      <% include ../partials/head %>
+</head>
+<body>
+        <header>
+            <!--Include the header of the page -->
+            <% include ../partials/header %>
+        </header>
+        <h2><%= tagline %></h2>
+
+        <h4>Friends</h4>
+        <% friends.forEach(function(friend) {%>
+          <li><%=friend.name %></li>
+        <% }); %>
+        
+      <footer>
+        <% include ../partials/footer %>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Flexbox - the new hotness</title>
+  </head>
+      <style media="screen">
+          body {
+            padding:0;
+            margin:0;
+          }
+
+          .boxes {
+              display: flex;
+              flex-direction: row; /*options are row, column, row reverse, column reverse*/
+              flex-wrap: wrap-reverse;
+              justify-content: center; /*options are space-around, space-between, flex-start (default), flex-end,flex-center*/
+              align-items: center;
+              height: 100vh; /*viewport height and viewport width*/
+              background-color: tan;
+          }
+
+          .box {
+            background-color: #ccc;
+            /*width: 100px;*/
+            /*flex 1 1 auto; */ /*flex takes 3 properties*/
+            flex-grow: 1; /*how much we want things to grow by in a ratio....relaive to the other elements in this flex container*/
+            flex-shrink: 1;
+            flex-basis: auto; /*width or size of element before growing or shrinking...here, we are just lettin browser to decide*/
+            min-width: 100px;
+            height: 100px; /*viewport height (percentage)*/
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center; /*speaks to our perpendicular*/
+          }
+
+          .box:last-child { /*or nth-child(4)*/
+              flex-grow: 5;
+          }
+
+          .box:nth-child(3) {
+              flex-grow: 0.5;
+          }
+      </style>
+  <body>
+  <div class="boxes">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+  </div>
+  </body>
+
+</html>
