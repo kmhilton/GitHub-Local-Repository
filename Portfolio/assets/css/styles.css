@@ -1,0 +1,52 @@
+body { /*forces getting rid of browser padding */
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+.navbar {
+  background-color: #ccc;
+  min-height: 5rem; /*10px*/
+  font-size: 1.8rem; /*18px*/
+}
+ul,
+li {
+  list-style-type: none; /*this is the bullet...NO bullet*/
+  margin: 0;
+  padding: 0;
+}
+li {
+  float: left;
+  display: inline-block;
+  background-color: #666;
+  width:33.3%;
+  line-height: 2.7;
+}
+ul:after {
+  content: "";
+  clear: both;
+  height: 0;
+  width: 0;
+  display: block;
+}
+/* another hack for clearfix (older) in this implementation: ul {overflow:hidden};*/
+
+a {
+  display: block;
+  background-color: darkblue;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .5s ease,  /* transition does not work on text align */
+              color .25s ease,
+              box-shadow .5s ease,
+              transform .5s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+a:hover {
+  background-color: #ccc;
+  color: #000;
+  transform: translateY(10px) translateX(3px);
+  box-shadow: 0 3px 4px rgba(0,0,0,0.5);
+}
